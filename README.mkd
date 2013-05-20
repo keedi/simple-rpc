@@ -1,0 +1,63 @@
+# NAME
+
+Simple::RPC - Simple RPC server
+
+# VERSION
+
+version 0.000
+
+# SYNOPSIS
+
+    use Simple::RPC;
+
+    my $rpcd = Simple::RPC->new;
+    $rpcd->start;
+
+# DESCRIPTION
+
+This module serves simple HTTP request and return HTTP response as JSON string.
+
+# ATTRIBUTES
+
+## port
+
+Specify port number to process HTTP request. Read-only.
+(default: 8080)
+
+    my $rpcd = Simple::RPC->new(
+        port => 8888,
+    );
+
+## types
+
+Specify available type string. Read-only.
+
+    my $rpcd = Simple::RPC->new(
+        types => [qw/
+            BackupDatabase
+            SetDefaultConfig
+            SendEmail
+            SendSMS
+            Reboot
+        /],
+    );
+
+# METHODS
+
+## start
+
+Start http server
+
+    my $rpcd = Simple::RPC->new;
+    $rpcd->start;
+
+# AUTHOR
+
+Keedi Kim - 김도형 <keedi@cpan.org>
+
+# COPYRIGHT AND LICENSE
+
+This software is copyright (c) 2013 by Keedi Kim.
+
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
